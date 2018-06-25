@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+
+.btn-sucess, .btn-success {
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+    background-color: #00C6A6;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px !important;
+    margin: 0;
+    i {
+        position: relative;
+        left: -7px;
+    }
+    &:hover {
+        background-color: #07a98e;
+    }
+    &:active {
+        background: #07a98e;
+    }
+}
+
+.btn-danger {
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+    background-color: red;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px !important;
+    margin: 0;
+    i {
+        position: relative;
+        left: -7px;
+    }
+    &:hover {
+        background-color: red;
+    }
+    &:active {
+        background: red;
+    }
+}
+
+.btn-warning {
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+    background-color: #FFAB00;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px !important;
+    margin: 0;
+    i {
+        position: relative;
+        left: -7px;
+    }
+    &:hover {
+        background-color: #e59500;
+    }
+    &:active {
+        background: #e09200;
+    }
+}
+
+.btn-primary {
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+    background-color: #0065FF;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px !important;
+    margin: 0;
+    i {
+        position: relative;
+        left: -7px;
+    }
+    &:hover {
+        background-color: #0052cc;
+    }
+}
+
+.btn-ligth {
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    color: #0065FF;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px !important;
+    margin: 0;
+    i {
+        position: relative;
+        left: -7px;
+    }
+    &:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+.btn-outline-primary {
+    height: auto;
+    width: auto;
+    border-radius: 3px;
+    color: #0366d6;
+    background-color: #fff;
+    background-image: none;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px !important;
+    margin: 0;
+    border: 1px solid rgba(27,31,35,0.2);
+    i {
+        position: relative;
+        left: -7px;
+    }
+    &:hover {
+        color: #fff;
+        background-color: #0366d6;
+        background-image: none;
+        border-color: #0366d6;
+    }
+}
