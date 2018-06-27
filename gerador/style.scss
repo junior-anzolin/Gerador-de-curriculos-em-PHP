@@ -30,19 +30,82 @@ html, body {
     margin: 0 auto;
 }
 
-label, input {
+.title-body {
+    display: flex;
+    border-bottom: 2px solid blue;
     width: 100%;
+    margin: 20px 0;
+}
+
+.mais-campos {
+    height: 30px!important;
+    width: 30px!important;
+    padding: 0!important;
+    border-radius: 20px!important;
+    margin: auto 2px!important;
+}
+
+.title {
+    font-size: 20px;
+    padding: 5px 2px;
+    margin: 0 10px;
+}
+
+
+label, input, select, textarea {
+    width: 90%;
     margin: 10px;
 }
 
-input {
+input, select, textarea {
     border: 1px solid #cacaca;
     border-radius: 3px;
     padding: 10px;
+}
 
-    &:focus {
-        border: 2px solid blue;
-    }
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #00c4ff;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.formacao {
+    display: flex;
+    width: 97%;
+}
+
+.formacao .anos {
+    max-width: 15%;
+    margin: 0 5px;
+}
+
+.formacao .desc {
+    width: 70%;
+    margin: 0 5px;
+}
+
+.DDMMAAAA {
+    display: flex;
+    width: 50%;
+}
+
+.DDMMAAAA label {
+    width: auto;
+    margin: auto 0;
+}
+
+.DDMMAAAA .datas label {
+    font-size: 10px;
+}
+
+.DDMMAAAA .datas select {
+    margin: 0 auto;
+}
+
+.datas-DDMMAAAA {
+    display: flex;
 }
 
 @media screen and (max-width: 1000px) {
