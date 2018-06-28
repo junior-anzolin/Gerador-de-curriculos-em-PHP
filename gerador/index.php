@@ -26,7 +26,7 @@
         ],
         [
             "label" => "Endereço",
-            "for"   => "endereco"
+            "for"   => "endereco_ident"
         ],
         [
             "label" => "Telefone",
@@ -74,7 +74,9 @@
     <object class="header" type="text/html" data="../header/header.html"></object>
 
     <div class="body">
-        <form action="">
+        <form action="resultado.php" method="post">
+
+            <input type="text" name="form_ident" value="<?php $Identificacao ?>" style="visibility: hidden; position: absolute; width: 1px!important;">
 
             <div class="title-body">
                 <h3 class="title">Identificação</h3>
@@ -87,7 +89,7 @@
                     echo '
                         <div class="form-control">
                             <label for="' . $Identificacao[$campo]->for . '">' . $Identificacao[$campo]->label . ':</label>
-                            <input type="text" id="' . $Identificacao[$campo]->for . '">
+                            <input type="text" id="' . $Identificacao[$campo]->for . '"  name="' . $Identificacao[$campo]->for . '">
                         </div>
                     ';
 
@@ -109,7 +111,7 @@
                             <div class="anos">
 
                                 <label for="ano_inicio">Ano de inicio:</label>
-                                <select id="ano_inicio">
+                                <select id="ano_inicio" name="ano_inicio[]">
                                     <option>Selecione o ano</option>
                                     <?php echo $anos ?>
                                     <option value="Cursando">Cursando</option>
@@ -119,7 +121,7 @@
                             <div class="anos">
 
                                 <label for="ano_termino">Ano de termino:</label>
-                                <select id="ano_termino">
+                                <select id="ano_termino" name="ano_termino[]">
                                     <option>Selecione o ano</option>
                                     <?php echo $anos ?>
                                     <option value="Cursando">Cursando</option>
@@ -129,7 +131,7 @@
                             <div class="desc">
 
                                 <label for="desc">Descrição:</label>
-                                <input type="text" id="desc">
+                                <input type="text" id="desc" name="desc[]">
 
                             </div>
 
@@ -155,21 +157,21 @@
                                 <label>Data de inicio:</label>
                                 <div class="datas">
                                     <label for="dias">Dia:</label>
-                                    <select id="dias">
+                                    <select id="dias" name="dias_inicio[]">
                                         <option>Selecione o Dia</option>
                                         <?php echo $dias ?>
                                     </select>
                                 </div>
                                 <div class="datas">
                                     <label for="meses">Mês</label>
-                                    <select id="meses">
+                                    <select id="meses" name="meses_inicio[]">
                                         <option>Selecione o Mês</option>
                                         <?php echo $meses ?>
                                     </select>
                                 </div>
                                 <div class="datas">
                                     <label for="anos">Ano</label>
-                                    <select id="anos">
+                                    <select id="anos" name="anos_inicio[]">
                                         <option>Selecione o ano</option>
                                         <?php echo $anos ?>
                                     </select>
@@ -181,21 +183,21 @@
                                 <label for="ano_inicio">Data de Termino:</label>
                                 <div class="datas">
                                     <label for="dias">Dia:</label>
-                                    <select id="dias">
+                                    <select id="dias" name="dias_termino[]">
                                         <option>Selecione o Dia</option>
                                         <?php echo $dias ?>
                                     </select>
                                 </div>
                                 <div class="datas">
                                     <label for="meses">Mês</label>
-                                    <select id="meses">
+                                    <select id="meses" name="meses_termino[]">
                                         <option>Selecione o Mês</option>
                                         <?php echo $meses ?>
                                     </select>
                                 </div>
                                 <div class="datas">
                                     <label for="anos">Ano</label>
-                                    <select id="anos">
+                                    <select id="anos" name="anos_termino[]">
                                         <option>Selecione o ano</option>
                                         <?php echo $anos ?>
                                     </select>
@@ -207,107 +209,32 @@
                         <div>
 
                             <label for="empresa">Empresa:</label>
-                            <input type="text" id="empresa">
+                            <input type="text" id="empresa" name="empresa[]">
 
                         </div>
                         <div>
 
                             <label for="endereco">Endereço:</label>
-                            <input type="text" id="endereco">
+                            <input type="text" id="endereco" name="endereco[]">
 
                         </div>
                         <div>
 
                             <label for="cargo">Cargo:</label>
-                            <input type="text" id="cargo">
+                            <input type="text" id="cargo" name="cargo[]">
 
                         </div>
                         <div>
 
                             <label for="funcaoDesempenhada">Funções Desempenhadas:</label>
-                            <textarea id="funcaoDesempenhada" rows="10"></textarea>
+                            <textarea id="funcaoDesempenhada" name="funcaoDesempenhada[]" rows="10"></textarea>
 
                         </div>
 
                     </div>
                 </div>
             </div>
-
-            <div class="title-body">
-                <button class="btn btn-danger mais-campos" type="button" onclick="removeCurso()">-</button>
-                <button class="btn btn-success mais-campos" type="button" onclick="createCurso()">+</button>
-                <h3 class="title">Cursos</h3>
-            </div>
-
-            <div id="curso">
-                <div id="formCurso">
-                    <div class="form-control">
-                        <div class="formacao">
-
-                            <div class="anos">
-
-                                <label for="ano_inicio">Ano:</label>
-                                <select id="ano_inicio">
-                                    <option>Selecione ano</option>
-                                    <?php echo $anos ?>
-                                    <option value="Cursando">Cursando</option>
-                                </select>
-
-                            </div>
-                            <div class="desc">
-
-                                <label for="desc">Descrição:</label>
-                                <input type="text" id="desc">
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="title-body">
-                <button class="btn btn-danger mais-campos" type="button" onclick="removeContatoInfo()">-</button>
-                <button class="btn btn-success mais-campos" type="button" onclick="createContatoInfo()">+</button>
-                <h3 class="title">Contatos para informação</h3>
-            </div>
-
-            <div id="contatoInfo">
-                <div id="formContatoInfo">
-                    <div class="form-control">
-                        <div class="formacao">
-
-                            <div class="anos">
-
-                                <label for="ano_inicio">Ano de inicio:</label>
-                                <select id="ano_inicio">
-                                    <option>Selecione ano</option>
-                                    <?php echo $anos ?>
-                                    <option value="Cursando">Cursando</option>
-                                </select>
-
-                            </div>
-                            <div class="anos">
-
-                                <label for="ano_termino">Ano de termino:</label>
-                                <select id="ano_termino">
-                                    <option>Selecione ano</option>
-                                    <?php echo $anos ?>
-                                    <option value="Cursando">Cursando</option>
-                                </select>
-
-                            </div>
-                            <div class="desc">
-
-                                <label for="desc">Descrição:</label>
-                                <input type="text" id="desc">
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button class="btn btn-success btn-salvar" type="submit">Salvar</button>
 
         </form>
     </div>
